@@ -94,7 +94,7 @@ export const portfolioData: {
     location: "India",
     education: "B.Tech · 2026",
     bioParagraphs: [
-      "I am an engineer with a deep interest in AI and Machine Learning fields. My core philosophy: I think, I research, I build. I deliver real-world solutions, automated workflows, and measurable business outcomes.",
+      "I am an AIML engineer with a deep interest in AI and Machine Learning fields. My core philosophy: I think, I research, I build. I deliver real-world solutions, automated workflows, and measurable business outcomes.",
       "In my career of engineering, I have worked on RAG systems, Data Engineering, Development of Agentic systems and workflows, and learned failure mode debugging from deploying workflows to production."
     ],
     interests: [
