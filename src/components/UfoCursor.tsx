@@ -31,7 +31,7 @@ function UfoSvg({ isBeaming }: { isBeaming: boolean }) {
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}
-        className={`transition-transform duration-300 ${isBeaming ? 'scale-110 drop-shadow-[0_0_8px_#38bdf8]' : ''}`}
+        className={`transition-transform duration-300 ${isBeaming ? 'scale-110 drop-shadow-[0_0_8px_var(--accent)]' : ''}`}
       >
         {matrix.map((row, rowIndex) =>
           row.split("").map((char, colIndex) => {
@@ -43,14 +43,14 @@ function UfoSvg({ isBeaming }: { isBeaming: boolean }) {
                 y={rowIndex * pixelSize}
                 width={pixelSize}
                 height={pixelSize}
-                fill={colors[char] || '#7dd3fc'}
+                fill={colors[char] || '#f59e0b'}
               />
             );
           })
         )}
       </svg>
 
-      {/* Option A: Sci-Fi Neon Gradient Cone Tractor Beam */}
+      {/* Option A: Glowing Amber Gold Tractor Beam */}
       <div
         className={`absolute top-[85%] flex flex-col items-center pointer-events-none transition-all duration-300 origin-top ${
           isBeaming
@@ -60,15 +60,15 @@ function UfoSvg({ isBeaming }: { isBeaming: boolean }) {
         style={{ width: '64px' }}
       >
         {/* Glowing Source Node at UFO Base */}
-        <div className="w-2.5 h-1 bg-[#38bdf8] rounded-full shadow-[0_0_10px_#38bdf8] animate-pulse -mb-0.5" />
+        <div className="w-2.5 h-1 bg-[#f59e0b] rounded-full shadow-[0_0_10px_#f59e0b] animate-pulse -mb-0.5" />
 
         {/* Conical Light Beam */}
         <div
           className="w-full h-18 relative animate-pulse"
           style={{
             clipPath: 'polygon(35% 0%, 65% 0%, 100% 100%, 0% 100%)',
-            background: 'linear-gradient(180deg, rgba(56, 189, 248, 0.75) 0%, rgba(59, 130, 246, 0.35) 45%, rgba(56, 189, 248, 0.05) 100%)',
-            filter: 'drop-shadow(0 0 10px rgba(56, 189, 248, 0.6))',
+            background: 'linear-gradient(180deg, rgba(245, 158, 11, 0.85) 0%, rgba(251, 191, 36, 0.40) 45%, rgba(245, 158, 11, 0.05) 100%)',
+            filter: 'drop-shadow(0 0 10px rgba(245, 158, 11, 0.6))',
           }}
         >
           {/* Subtle inner scanline rays */}
@@ -82,7 +82,7 @@ function UfoSvg({ isBeaming }: { isBeaming: boolean }) {
 
         {/* Ground Target Light Pool */}
         <div
-          className="w-12 h-2.5 rounded-[50%] bg-[#38bdf8]/30 shadow-[0_0_16px_#38bdf8] -mt-1.5 border border-[#38bdf8]/50 animate-ping"
+          className="w-12 h-2.5 rounded-[50%] bg-[#f59e0b]/35 shadow-[0_0_16px_#f59e0b] -mt-1.5 border border-[#f59e0b]/60 animate-ping"
           style={{ animationDuration: '2s' }}
         />
       </div>

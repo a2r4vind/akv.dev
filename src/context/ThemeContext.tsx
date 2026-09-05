@@ -17,11 +17,11 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark');
-  const [palette, setPaletteState] = useState<ColorPalette>('cyan');
+  const [palette, setPaletteState] = useState<ColorPalette>('amber');
 
   useEffect(() => {
     const savedTheme = (window.localStorage.getItem('theme') as Theme) || 'dark';
-    const savedPalette = (window.localStorage.getItem('palette') as ColorPalette) || 'cyan';
+    const savedPalette = (window.localStorage.getItem('palette') as ColorPalette) || 'amber';
 
     setTheme(savedTheme);
     setPaletteState(savedPalette);

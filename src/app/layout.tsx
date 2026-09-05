@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { UfoCursor } from "@/components/UfoCursor";
 import { ThreeBackground } from "@/components/ThreeBackground";
-import { PaletteSwitcher } from "@/components/PaletteSwitcher";
 import { Socials } from "@/components/Socials";
 import { Nav } from "@/components/Nav";
 import { portfolioData } from "@/data/portfolio";
@@ -56,7 +55,6 @@ export default function RootLayout({
           <ThreeBackground />
           <Socials />
           <Nav />
-          <PaletteSwitcher />
           <div className="flex-1 flex flex-col relative z-10">
             {children}
           </div>

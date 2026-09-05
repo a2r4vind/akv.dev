@@ -16,11 +16,11 @@
   --amber: #f59e0b;
   --nav-h: 64px;
 
-  /* Default Palette: High-Luminosity Neon Cyan */
-  --accent: #38bdf8;
-  --accent-glow: #0284c7;
-  --border: rgba(56, 189, 248, 0.20);
-  --border-hi: rgba(56, 189, 248, 0.55);
+  /* Default Palette: Amber Gold & Radiant Warmth */
+  --accent: #f59e0b;
+  --accent-glow: #d97706;
+  --border: rgba(245, 158, 11, 0.20);
+  --border-hi: rgba(245, 158, 11, 0.55);
 
   --background: var(--bg);
   --foreground: var(--text);
