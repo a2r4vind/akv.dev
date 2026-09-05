@@ -5,39 +5,104 @@
   --font-barlow-family: var(--font-barlow), "Barlow Condensed", sans-serif;
   --font-ibm-plex-mono-family: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
 
-  /* Dark Theme Tokens (Default) */
+  /* Base Background & Text */
   --bg: #000000;
   --s1: #050505;
   --s2: #0a0a0a;
-  --border: rgba(59, 130, 246, 0.15);
-  --border-hi: rgba(59, 130, 246, 0.40);
   --text: #f3f4f6;
   --dim: #9ca3af;
-  --accent: #3b82f6;
   --red: #ef4444;
   --green: #10b981;
   --amber: #f59e0b;
   --nav-h: 64px;
 
+  /* Default Palette: High-Luminosity Neon Cyan */
+  --accent: #38bdf8;
+  --accent-glow: #0284c7;
+  --border: rgba(56, 189, 248, 0.20);
+  --border-hi: rgba(56, 189, 248, 0.55);
+
   --background: var(--bg);
   --foreground: var(--text);
 }
 
+/* Palette 1: Electric Cyan & Ice Blue */
+[data-palette="cyan"] {
+  --accent: #38bdf8;
+  --accent-glow: #0284c7;
+  --border: rgba(56, 189, 248, 0.20);
+  --border-hi: rgba(56, 189, 248, 0.55);
+}
+
+/* Palette 2: Cyber Emerald & Mint Glow */
+[data-palette="emerald"] {
+  --accent: #10b981;
+  --accent-glow: #059669;
+  --border: rgba(16, 185, 129, 0.20);
+  --border-hi: rgba(16, 185, 129, 0.55);
+}
+
+/* Palette 3: Amber Gold & Radiant Warmth */
+[data-palette="amber"] {
+  --accent: #f59e0b;
+  --accent-glow: #d97706;
+  --border: rgba(245, 158, 11, 0.20);
+  --border-hi: rgba(245, 158, 11, 0.55);
+}
+
+/* Palette 4: Electric Violet & Cyber Amethyst */
+[data-palette="violet"] {
+  --accent: #a855f7;
+  --accent-glow: #7e22ce;
+  --border: rgba(168, 85, 247, 0.20);
+  --border-hi: rgba(168, 85, 247, 0.55);
+}
+
+/* Palette 5: Classic Blue */
+[data-palette="blue"] {
+  --accent: #3b82f6;
+  --accent-glow: #1d4ed8;
+  --border: rgba(59, 130, 246, 0.20);
+  --border-hi: rgba(59, 130, 246, 0.55);
+}
+
+/* Light Theme Overrides */
 [data-theme="light"] {
   --bg: #ffffff;
   --s1: #f9fafb;
   --s2: #f3f4f6;
-  --border: rgba(59, 130, 246, 0.20);
-  --border-hi: rgba(59, 130, 246, 0.50);
   --text: #111827;
   --dim: #4b5563;
-  --accent: #2563eb;
-  --red: #dc2626;
-  --green: #059669;
-  --amber: #d97706;
+}
 
-  --background: var(--bg);
-  --foreground: var(--text);
+[data-theme="light"][data-palette="cyan"] {
+  --accent: #0284c7;
+  --border: rgba(2, 132, 199, 0.22);
+  --border-hi: rgba(2, 132, 199, 0.60);
+}
+
+[data-theme="light"][data-palette="emerald"] {
+  --accent: #059669;
+  --border: rgba(5, 150, 105, 0.22);
+  --border-hi: rgba(5, 150, 105, 0.60);
+}
+
+[data-theme="light"][data-palette="amber"] {
+  --accent: #d97706;
+  --border: rgba(217, 119, 6, 0.22);
+  --border-hi: rgba(217, 119, 6, 0.60);
+}
+
+[data-theme="light"][data-palette="violet"] {
+  --accent: #7e22ce;
+  --border: rgba(126, 34, 206, 0.22);
+  --border-hi: rgba(126, 34, 206, 0.60);
+}
+
+[data-theme="light"][data-palette="blue"] {
+  --accent: #2563eb;
+  --border: rgba(37, 99, 235, 0.22);
+  --border-hi: rgba(37, 99, 235, 0.60);
 }
 
 html {
@@ -107,8 +172,8 @@ body {
 
 .chip-accent {
   color: var(--accent);
-  background: rgba(59, 130, 246, 0.08);
-  border-color: rgba(59, 130, 246, 0.30);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .chip-red {

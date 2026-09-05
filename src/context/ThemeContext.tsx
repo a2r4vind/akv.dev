@@ -2,35 +2,49 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'dark' | 'light';
+export type Theme = 'dark' | 'light';
+export type ColorPalette = 'cyan' | 'emerald' | 'amber' | 'violet' | 'blue';
 
 interface ThemeContextType {
   theme: Theme;
+  toggleTheme: () => void;
   toggle: () => void;
+  palette: ColorPalette;
+  setPalette: (palette: ColorPalette) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark');
-  const [mounted, setMounted] = useState(false);
+  const [palette, setPaletteState] = useState<ColorPalette>('cyan');
 
   useEffect(() => {
-    const saved = (window.localStorage.getItem('theme') as Theme) || 'dark';
-    setTheme(saved);
-    document.documentElement.setAttribute('data-theme', saved);
-    setMounted(true);
+    const savedTheme = (window.localStorage.getItem('theme') as Theme) || 'dark';
+    const savedPalette = (window.localStorage.getItem('palette') as ColorPalette) || 'cyan';
+
+    setTheme(savedTheme);
+    setPaletteState(savedPalette);
+
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.documentElement.setAttribute('data-palette', savedPalette);
   }, []);
 
-  const toggle = () => {
+  const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark';
     setTheme(next);
     document.documentElement.setAttribute('data-theme', next);
     window.localStorage.setItem('theme', next);
   };
 
+  const setPalette = (newPalette: ColorPalette) => {
+    setPaletteState(newPalette);
+    document.documentElement.setAttribute('data-palette', newPalette);
+    window.localStorage.setItem('palette', newPalette);
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, toggle }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, toggle: toggleTheme, palette, setPalette }}>
       {children}
     </ThemeContext.Provider>
   );
