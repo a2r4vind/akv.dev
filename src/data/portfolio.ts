@@ -98,11 +98,11 @@ export const portfolioData: {
       "In my career of engineering, I have worked on RAG systems, Data Engineering, Development of Agentic systems and workflows, and learned failure mode debugging from deploying workflows to production."
     ],
     interests: [
-      { label: "Coding", desc: "I Develop high-performance AI architectures" },
-      { label: "Music", desc: "I play with strings & acoustic melodies" },
-      { label: "Gaming", desc: "I Play competitive & immersive games" },
-      { label: "Gyming", desc: "I lift heavy & optimize stamina" },
-      { label: "Binge Watching", desc: "I watch sci-fi, anime & cinema" }
+      { label: "Coding", desc: "I Develop" },
+      { label: "Music", desc: "I play with strings" },
+      { label: "Gaming", desc: "I Play" },
+      { label: "Gyming", desc: "I lift" },
+      { label: "Binge Watching", desc: "I watch" }
     ]
   },
   projects: [
