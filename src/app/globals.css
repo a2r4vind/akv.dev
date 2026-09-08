@@ -209,10 +209,6 @@ body {
   will-change: transform;
 }
 
-.ticker-track:hover {
-  animation-play-state: paused;
-}
-
 @keyframes blink {
   0%, 100% {
     opacity: 1;
