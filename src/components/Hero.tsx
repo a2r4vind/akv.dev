@@ -57,7 +57,7 @@ export function Hero() {
         >
           <Reveal delay={200}>
             <p className="font-mono text-xs md:text-sm text-[var(--dim)] tracking-[0.1em] mb-4">
-              an AIML Engineer
+              an AI / ML Engineer
             </p>
           </Reveal>
 
