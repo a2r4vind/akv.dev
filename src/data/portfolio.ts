@@ -6,7 +6,9 @@ export interface Profile {
   email: string;
   github: string;
   linkedin: string;
-  instagram: string;
+  leetcode?: string;
+  hackerrank?: string;
+  instagram?: string;
   location: string;
   education: string;
   bioParagraphs: string[];
@@ -89,8 +91,9 @@ export const portfolioData: {
     bioSubtitle: "An AIML Engineer specializing in agentic systems, computer vision forensics, and machine learning solutions.",
     email: "arvindverma24004@gmail.com",
     github: "https://github.com/a2r4vind",
-    linkedin: "https://www.linkedin.com/in/rahuldaga0211/",
-    instagram: "https://instagram.com/_rahul.md04",
+    linkedin: "https://www.linkedin.com/in/arvind-kumar-verma-4b43b9355/",
+    leetcode: "https://leetcode.com/u/arvind_codes/",
+    hackerrank: "https://www.hackerrank.com/profile/arvindverma24004",
     location: "Ahmedabad, Gujarat, India",
     education: "New L.J. Institute of Engineering & Technology, Ahmedabad · B.E. (AI/ML) 2022–2026 (CPI: 9.54 | CGPA: 9.52)",
     bioParagraphs: [
