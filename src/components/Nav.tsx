@@ -74,14 +74,16 @@ export function Nav() {
             );
           })}
 
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-block font-mono text-[0.68rem] tracking-[0.1em] uppercase text-[var(--accent)] border border-[var(--accent)] px-3.5 py-1.5 rounded-sm hover:bg-[var(--accent)]/[0.07] transition-colors ml-2 mr-2"
+          <Link
+            href="/resume"
+            className={`hidden md:inline-block font-mono text-[0.68rem] tracking-[0.1em] uppercase border px-3.5 py-1.5 rounded-sm transition-colors ml-2 mr-2 ${
+              pathname === '/resume'
+                ? 'text-[var(--accent)] bg-[var(--accent)]/[0.15] border-[var(--accent)] font-semibold shadow-[0_0_12px_rgba(245,158,11,0.2)]'
+                : 'text-[var(--accent)] border-[var(--accent)] hover:bg-[var(--accent)]/[0.08]'
+            }`}
           >
             Resume
-          </a>
+          </Link>
 
           {mounted ? (
             <button
@@ -140,15 +142,15 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/resume"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 font-mono text-sm tracking-[0.14em] uppercase text-center text-[var(--accent)] border border-[var(--accent)] py-3 rounded-sm"
+              className={`mt-4 font-mono text-sm tracking-[0.14em] uppercase text-center text-[var(--accent)] border border-[var(--accent)] py-3 rounded-sm ${
+                pathname === '/resume' ? 'bg-[var(--accent)]/[0.15] font-bold' : ''
+              }`}
             >
-              Resume PDF
-            </a>
+              Resume Page
+            </Link>
           </div>
 
           <div className="pt-6 text-center border-t border-[var(--border)]">
